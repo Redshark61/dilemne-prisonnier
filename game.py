@@ -31,22 +31,31 @@ class Game:
     @classmethod
     def checkSpecialChoice(cls, players, index):
         for i, player in enumerate(players):
+
+            if isinstance(player.strategy, list):
+                if player.howManyTimeChoice == player.strategy[player.wichChoice][1]:
+                    player.wichChoice = 1 if player.wichChoice == 0 else 0
+                    player.howManyTimeChoice = 0
+                player.choice = player.strategy[player.wichChoice][0]
+                player.howManyTimeChoice += 1
+
             # If the current player played either ! or =
-            if player.choice in ('=', '!'):
+            if player.strategy in ('=', '!') or player.choice in ('=', '!'):
                 # if the index is 0, then it's the first turn, so we must define a beginning choice
-                if index == 0 and player != players[0] and players[0].choice in ('=', '!', 'r'):
+                if index == 0 and (players[0].strategy in ('=', '!', 'r') or players[0].choice in ('=', '!', 'r')):
                     player.choice = random.choice(["c", "b"])
-                    return
+                    continue
                 # Otherwise, if it's = then play the same move as the other player
-                if player.choice == '=':
+                if player.strategy == '=' or player.choice == '=':
                     player.choice = players[0 if i == 1 else 1].choice
-                    return
+                    continue
                 # Otherwise, it's ! then play the opposite of the other player
                 player.choice = 'c' if players[0 if i == 1 else 1].choice == 'b' else 'b'
-                return
+                continue
             # If the player played r
-            if player.choice == 'r':
+            if player.strategy == 'r' or player.choice == 'r':
                 player.choice = random.choice(["c", "b"])
+                continue
 
     @staticmethod
     def points(points, players):

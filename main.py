@@ -3,7 +3,7 @@ from players import Player1, Player2
 
 
 def main():
-    with open("./strategy/test2.strategy", "r", encoding="utf-8") as f:
+    with open("./strategy/test1.strategy", "r", encoding="utf-8") as f:
         lines = f.readlines()
     for line in lines:
         if line.startswith("1:"):
