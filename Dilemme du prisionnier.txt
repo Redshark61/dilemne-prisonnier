@@ -1,0 +1,76 @@
+Voir https://www.youtube.com/watch?v=StRqGx9ri2I
+
+
+Principes du jeu :
+------------------
+
+Chaque tour, 2 joueurs jouent pour un prix.
+Ils peuvent soit Coopérer, soit se Trahir.
+    - si les 2 coopèrent : ils gagnent 3 points chacun
+    - si les 2 se trahissent : ils gagnent 1 point chacun
+    - si l'un coopère et l'autre trahi : le traitre gagne 5 et le coopérant 0
+
+
+Mise en pratique :
+------------------
+
+Les 2 joueurs jouent x tours d'affilée.
+Chaque joueur défini en début de partie une stratégie qu'il conserve tout au long du jeu.
+À la fin des x tours, on compte pour chacun :
+    - le nombre de victoires
+    - le nombre de défaites
+    - le nombre de match nul
+    - la quantité totale de points gagnés
+
+
+Concrètement :
+--------------
+
+1 - Créer un programme correspondant à la mise en pratique ci-dessus
+(avec par exemple un nombre de tours à définir ou 1000 par défaut)
+
+2 - Les stratégies doivent êtres définies dans un fichier texte
+Les fichiers de stratégie seront stockés dans un dossier dédié
+
+3 - Il est nécessaire d'inventer un langage simple mais spécifique (que le programme devra être capable d'interpréter) pour matérialiser les stratégies dans le fichier texte
+
+4 - On peut lancer le jeu selon 2 modes différents :
+    - doit en indiquant au programme (idéalement par une sélection de l'utilisateur), quels sont les 2 fichiers (stratégies) à utiliser
+    - soit en faisant automatiquement jouer toutes les combinaisons possibles de stratégies entre elles
+
+5 - Chaque fois qu'un match se termine, on enregistre dans un fichier texte ses résultats et ses paramètres, à savoir :
+    - le nom de la 1ère stratégie
+    - le nom de la 2ème stratégie
+    - le nombre de victoires de la stratégie 1
+    - le nombre de victoires de la stratégie 2
+    - le nombre de matchs nuls
+    - le nombre total de points gagnés par la stratégie 1
+    - le nombre total de points gagnés par la stratégie 2
+
+6 - Des options supplémentaires du programme doivent permettre de :
+    - afficher le résultat de tous les matchs joués (historique)
+    - déterminer globalement :
+        - quelle est la meilleure stratégie en terme de victoires
+        - quelle est la pire stratégie en terme de victoires
+        - quelle est la meilleure stratégie en terme de points gagnés
+        - quelle est la pire stratégie en terme de points gagnés
+    - afficher la liste de chaque stratégie :
+        - triée soit par :
+            - nombre de victoire
+            - nombre de points gagnés
+            - nombre de matchs nuls
+        - avec comme informations :
+            - le nombre brut de victoires (et son pourcentage)
+            - le nombre brut de défaites (et son pourcentage)
+            - le nombre brut de matchs nuls (et son pourcentage)
+            - le nombre total de points récoltés 
+            - le nombre moyen de points récoltés par match
+    - afficher le détail d'une stratégie spécifique (idéalement par une sélection de l'utilisateur dans le programme), à savoir :
+        - le nombre total de matchs joués
+        - le nombre brut de victoires (et son pourcentage)
+        - le nombre brut de défaites (et son pourcentage)
+        - le nombre brut de matchs nuls (et son pourcentage)
+        - le nombre total de points récoltés 
+        - le nombre moyen de points récoltés par match
+
+7 - On peut évidemment s'amuser à ajouter des graphiques statistiques
