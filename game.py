@@ -23,10 +23,10 @@ class Game:
         # If they play different choices (e.g [c,b] or [b,c])
         # If the first player played 'c', then the second player played 'b'
         if players[0].choice == 'c':
-            cls.points((5, 0), players)
+            cls.points((0, 5), players)
         # Orherwise, the first player played 'b', then the second player played 'c'
         else:
-            cls.points((0, 5), players)
+            cls.points((5, 0), players)
 
     @classmethod
     def checkSpecialChoice(cls, players, index):
